@@ -1,0 +1,247 @@
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #ffffff, #e6efff);
+    color: #333;
+    padding-top: 60px; /* Ensure content doesn't hide behind fixed header */
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #6a11cb, #101928);
+    color: #00a0b5;
+    padding: 4em 1em 2em; /* More padding for better spacing */
+    text-align: center;
+    position: relative;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em; /* Adjusted font size for better visibility */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+    transform: scale(1.1);
+}
+
+/* Intro Section */
+.intro {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2em 1em;
+    text-align: center;
+    position: relative; /* For absolute positioning of background effects */
+}
+
+/* Picture Background */
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), rgba(255,255,255,0));
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* Profile Photo */
+.profile-photo {
+    border-radius: 50%;
+    width: 200px; /* Slightly larger photo */
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+/* Heading */
+h1 {
+    font-size: 2.8em; /* Adjusted font size for better emphasis */
+    margin: 0.5em 0;
+}
+
+/* Intro Text */
+p {
+    font-size: 1.2em; /* Slightly larger font size */
+    margin-bottom: 1.2em;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 14px 28px; /* Larger button for better click area */
+    margin-top: 1em;
+    background: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #e64a19;
+    transform: translateY(-3px);
+}
+
+/* Sections */
+section {
+    padding: 3em 1.5em; /* More padding for better spacing */
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section hover effect */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+section:hover::before {
+    opacity: 0;
+}
+
+/* Section Headings */
+h2 {
+    font-size: 2.2em; /* Adjusted font size */
+    margin-bottom: 0.7em; /* Adjusted margin */
+    color: #333;
+}
+
+/* About Content */
+.about-content {
+    line-height: 1.8; /* Increased line height for readability */
+}
+
+.about-content p, .about-content h3 {
+    margin-bottom: 1em; /* Consistent margin for better spacing */
+}
+
+/* Projects */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em; /* More space between project items */
+    justify-content: center;
+}
+
+/* Project Items */
+.project-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    padding: 1.5em; /* More padding for better spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.project-item h3 {
+    margin: 0.5em 0;
+    font-size: 1.6em; /* Slightly larger heading */
+}
+
+.project-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+.project-item a {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* Hover Effects */
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+.project-item:hover img {
+    opacity: 0.9;
+}
+
+/* Contact Section */
+#contact ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#contact ul li {
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: #ff5722;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1.5em 0;
+    text-align: center;
+    border-top: 5px solid #ff5722;
+    margin-top: 2em;
+}
+
